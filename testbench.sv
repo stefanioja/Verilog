@@ -1,17 +1,10 @@
-// Code your testbench here
-// or browse Examples
 module test;
   reg Clk;
-  reg [7:0] InA, InB;
-  reg [3:0] Sel;
   TEST_IN inf(Clk);
   TEST_OUT infOut(Clk);
   monitorIn mntIn = new();
   monitorOut mntOut = new();
   top DUT(inf.DUT, infOut.DUT);
-  assign InA = inf.InA;
-  assign InB = inf.InB;
-  assign Sel = inf.Sel;
   initial begin
     mntOut.inf = infOut;
      mntOut.run();
